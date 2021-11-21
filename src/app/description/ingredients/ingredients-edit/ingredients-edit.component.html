@@ -1,0 +1,24 @@
+<div *ngIf="display" class="mt-3">
+    
+    <input type="text" class="form-control" placeholder="Pavadinimas" #ingredientName>
+    <div class="row">
+        <div class="col-md-6">
+            <input type="number" class="form-control" placeholder="Kiekis" #ingredientAmount>
+        </div>
+        <div class="col-md-6">
+            <select class="form-control" #ingredientUnits>
+                <option selected disabled hidden value="">Mato vnt.</option>
+                <option value="g.">g.</option>
+                <option value="vnt.">vnt.</option>
+                <option value="ml.">ml.</option>
+                <option value="a.š.">a.š.</option>
+                <option value="v.š.">v.š.</option>
+            </select>
+        </div>
+    
+    
+    </div>
+    <button class="btn btn-success mt-3" (click)="addIngredient(ingredientName, ingredientUnits, ingredientAmount)">Išsaugoti ingredientą</button>
+    <button class="btn btn-success mt-3 float-end" (click)="cancelEvent(false)">Uždaryti</button>
+</div>
+

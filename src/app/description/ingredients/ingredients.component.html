@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-header">Ingredientai</div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let ingredient of recipieIngredients; let i = index">{{ingredient.name}} - {{ingredient.amount }} {{ingredient.units}}</li>
+            </ul>
+        </div>  
+</div>
+<button class="btn btn-success mt-3" (click)="displayEdit(true)" *ngIf = "!display">Pridėti ingredientą</button>
+
+<app-ingredients-edit *ngIf="display" [display]="display" [id]="id" (cancelEventEmitter)="displayEdit($event)"></app-ingredients-edit>
+
+

@@ -1,0 +1,66 @@
+
+
+<div class="row mt-3">
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="list-group">
+                            <a [routerLink]="['/recipie',i]" (click)="display=false" class="list-group-item list-group-item-action" *ngFor="let recipie of recipies; let i = index">{{recipie.name}}</a>
+                        </div>
+                    </div>
+                </div>
+                <a routerLink="/" class="btn btn-success mt-3">Į pradžią</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header"><h3>{{recipie.name}}</h3></div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">Aprašymas</label>
+                    <textarea name="" class="form-control" rows="3" [value]="recipie.description" readonly></textarea>
+                    <!-- <input type="text"  class="form-control" [value]="recipie.description" readonly> -->
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Sudėtyje proteinų:</label>
+                    <input type="number" class="form-control" [value]="recipie.proteins" readonly>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Sudėtyje angliavandenių:</label>
+                    <input type="number" class="form-control" [value]="recipie.carbs" readonly>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Sudėtyje riebalų:</label>
+                    <input type="number" class="form-control" [value]="recipie.fat" readonly>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Kalorijų kiekis:</label>
+                    <input type="text" class="form-control" [value]="recipie.calories" readonly>
+                </div>
+                <!-- <div class="mb-3">
+                    <label class="form-label">Ingredientai:</label>
+                    <input type="text" class="form-control" [value]="recipie.ingredients" #lifeExpectancy>
+                </div> -->
+                
+               
+                <!-- <a class="btn btn-info float-end" (click)="update(code, region, surfaceArea, indepYear, population, lifeExpectancy )">Išsaugoti</a> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <app-ingredients [display]="display"></app-ingredients>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>
+
